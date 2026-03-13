@@ -1,0 +1,37 @@
+﻿@* @inherits TracerComponent *@
+<h3>ChildTwo is rendering</h3>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("ChildTwo OnInitialized is called");
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        Console.WriteLine("ChildTwo OnInitializedAsync is called");
+        return base.OnInitializedAsync();
+    }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("ChildTwo OnParametersSet is called");
+    }
+
+    protected override Task OnParametersSetAsync()
+    {
+        Console.WriteLine("ChildTwo OnParametersSetAsync is called");
+        return base.OnParametersSetAsync();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Console.WriteLine("ChildTwo OnAfterRender is called");
+    }
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("ChildTwo OnAfterRenderAsync is called");
+        return base.OnAfterRenderAsync(firstRender);
+    }
+}

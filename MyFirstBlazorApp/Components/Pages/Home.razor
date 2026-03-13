@@ -1,0 +1,57 @@
+﻿@page "/"
+
+@* @rendermode @(new InteractiveServerRenderMode(false)) *@
+@rendermode InteractiveServer
+
+@* @inherits TracerComponent *@
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<h2>Home is rendering</h2>
+
+<ChildOne />
+<ChildTwo />
+
+@code {
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("Home OnInitialized is called");
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Console.WriteLine("Home OnInitializedAsync is called");
+        await Task.Delay(1000);
+
+        Console.WriteLine("Home OnInitializedAsync is called after delay**********");
+
+        await Task.Delay(1000);
+
+        Console.WriteLine("Home OnInitializedAsync is called after second delay**********&&&&&&&&&&&&&&&&&&777");
+
+    }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("Home OnParametersSet is called");
+    }
+
+    protected override Task OnParametersSetAsync()
+    {
+        Console.WriteLine("Home OnParametersSetAsync is called");
+        return base.OnParametersSetAsync();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Console.WriteLine("Home OnAfterRender is called");
+    }
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("Home OnAfterRenderAsync is called");
+        return base.OnAfterRenderAsync(firstRender);
+    }
+}
